@@ -13,5 +13,6 @@ public class IndexController {
     public String index(String id){
 
         return "index";
+
     }
 }

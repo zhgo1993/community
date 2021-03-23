@@ -27,8 +27,10 @@
                     <li th:if="${session.user != null}">
                         <a href="/publish">提问</a>
                     </li>
-                    <!--https://accounts.google.com/o/oauth2/v2/auth?client_id=1059778596990-vunjjeltp8101j7m5oqgjnoe0oghhk74.apps.googleusercontent.com&redirect_uri=http://localhost:8887/oauth2callback&response_type=code&scope=https://www.googleapis.com/auth/drive.metadata.readonly-->
-                    <li th:if="${session.user==null}"><a href="https://github.com/login/oauth/authorize?client_id=Iv1.a286acba28802e6c&redirect_uri=http://localhost:8887/callback&state=1">登录</a></li>
+                    <!--<li th:if="${session.user==null}"><a href="https://github.com/login/oauth/authorize?client_id=Iv1.a286acba28802e6c&redirect_uri=http://localhost:8887/callback&state=1">登录</a></li>-->
+                    <li th:if="${session.user==null}">
+                        <a th:href="@{https://github.com/login/oauth/authorize(client_id='Iv1.a286acba28802e6c',redirect_uri=${#httpServletRequest.getRequestURL+'callback'},scope='user',state=1)}">登录</a>
+                    </li>
 
 
                     <li class="dropdown" th:if="${session.user!=null}">

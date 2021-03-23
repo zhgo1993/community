@@ -54,7 +54,7 @@ public class QuestionService {
             page = paginationDTO.getTotalPage();
         }
 
-        Integer offset = (page-1)*pagesize;
+        Integer offset =page <1 ? 0 : (page-1)*pagesize;
         List<QuestionDTO> questionDTOList = new ArrayList<>();
         QuestionExample example = new QuestionExample();
         example.setOrderByClause("gmt_create desc");

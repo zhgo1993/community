@@ -211,8 +211,8 @@ else
     if [ "$MVNW_VERBOSE" = true ]; then
       echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."
     fi
-    if [ -n "$MVNW_REPOURL" ]; then
-      jarUrl="$MVNW_REPOURL/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
+    if [ -n "$MVNW_REPOUrl" ]; then
+      jarUrl="$MVNW_REPOUrl/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
     else
       jarUrl="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
     fi
@@ -237,14 +237,14 @@ else
         else
             wget --http-user=$MVNW_USERNAME --http-password=$MVNW_PASSWORD "$jarUrl" -O "$wrapperJarPath"
         fi
-    elif command -v curl > /dev/null; then
+    elif command -v cUrl > /dev/null; then
         if [ "$MVNW_VERBOSE" = true ]; then
-          echo "Found curl ... using curl"
+          echo "Found cUrl ... using cUrl"
         fi
         if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
-            curl -o "$wrapperJarPath" "$jarUrl" -f
+            cUrl -o "$wrapperJarPath" "$jarUrl" -f
         else
-            curl --user $MVNW_USERNAME:$MVNW_PASSWORD -o "$wrapperJarPath" "$jarUrl" -f
+            cUrl --user $MVNW_USERNAME:$MVNW_PASSWORD -o "$wrapperJarPath" "$jarUrl" -f
         fi
 
     else
